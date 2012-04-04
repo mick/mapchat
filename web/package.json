@@ -1,0 +1,10 @@
+{
+  "name": "mapchat-web",
+  "version": "0.0.2",
+  "dependencies": {
+    "express": ">=2.5.9",
+    "ejs": ">=0.7.1",
+    "url": ">=0.4.9",
+    "http-proxy": ">=0.8.0"
+  }
+}

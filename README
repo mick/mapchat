@@ -1,0 +1,11 @@
+
+
+This is a collaborative map.  It using XMPP is is organized like a chat room. Each room has a Pubsub Node that all changes to features of the map are published to. 
+
+
+==== REQUIRES
+
+ - expressjs
+ - ejs
+ - node-xmpp
+ - couch and CouchDB

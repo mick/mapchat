@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Map Chat</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/strophe.js"></script>
+    <script type="text/javascript" src="/static/strophe.muc.js"></script>
+    <script type="text/javascript" src="/static/strophe.vcard.js"></script>
+    <script type="text/javascript" src="/static/strophe.pubsub.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap-tab.js"></script>
+    <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
+        <![endif]-->
+
+    <script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+    <script src="/static/wax.leaf.min.js"></script>
+    
+    <script type="text/javascript" src="/static/client.js"></script>    
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="container-fluid">
+      <div id="topnav">
+        <ul class="nav nav-tabs" id="tabs">
+          <li class="dropdown">
+            <a class="dropdown-toggle"
+               data-toggle="dropdown"
+               href="#">
+              <span>View</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-toggle="tab" id="modeview">View</a></li>
+              <li><a href="#" data-toggle="tab" id="modepoint">Edit - Point</a></li>
+              <li><a href="#" data-toggle="tab" id="modepolyline">Edit - Line</a></li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+
+      <div class="navbar navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#" id="mapname">
+            </a>
+            <form class="navbar-search pull-left">
+              <input type="text" class="search-query" placeholder="Search">
+            </form>
+            <ul class="nav">
+              <li><a href="#">Find Me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>    
+    </div>
+    <div id="log"></div>
+
+    <div id="chatmessage">
+      <textarea id="message"></textarea>
+      <input type="button" value="Send" id="sendmessage" />      
+    </div>
+    
+
+    <div id="chatcontent">
+    </div>
+
+
+    
+    <!--<div id="navigation">
+      <div id="square"></div>
+      <div class="spacer"></div>  
+      <div id="room_title" class="title light">This is a room title</div>
+      <div class="divider"></div>
+      <div id="roster"></div>
+      <div id="log"></div>
+    </div>
+
+    <div id="chatmessage">
+      <textarea id="message"></textarea>
+      <input type="button" value="Send" id="sendmessage" />      
+    </div>
+    
+    <div id="wrapper">
+      <div id="content">
+      </div>
+    </div>-->
+  </body>
+</html>
