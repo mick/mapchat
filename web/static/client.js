@@ -354,12 +354,12 @@ $(document).ready(function(){
 
 
     if(navigator.geolocation) {
-        $('a#findme').click(function(){           
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var browserLoc = new L.LatLng(position.coords.latitude,position.coords.longitude);
-                map.panTo(browserLoc);
-            });
+//        $('a#findme').click(function(){           
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var browserLoc = new L.LatLng(position.coords.latitude,position.coords.longitude);
+            map.panTo(browserLoc);
         });
+//        });
     }else{
         $("a#findme").parent("li").hide();
     }
