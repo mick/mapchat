@@ -24,17 +24,15 @@ if(console.log === undefined){
 function onConnect(status)
 {
     if (status == Strophe.Status.CONNECTING) {
-	log('Strophe is connecting.');
+	    $("#status").text('Connecting...');
     } else if (status == Strophe.Status.CONNFAIL) {
-	log('Strophe failed to connect.');
-	$('#connect').get(0).value = 'connect';
+	    $("#status").text('Failed to connect.');
     } else if (status == Strophe.Status.DISCONNECTING) {
-	log('Strophe is disconnecting.');
+		$('#status').text('Disconnecting.');
     } else if (status == Strophe.Status.DISCONNECTED) {
-	log('Strophe is disconnected.');
-	$('#connect').get(0).value = 'connect';
+		$('#status').text('Disconnected.');
     } else if (status == Strophe.Status.CONNECTED) {
-	log('Strophe is connected.');
+		$('#status').text('Connected.');
         if(window.location.pathname.substr(0,6) == "/room/"){
             talkback.roomname = window.location.pathname.replace("/room/", "");
             talkback.joinRoom(talkback.roomname+"@chat.talkback.im");            
@@ -44,6 +42,17 @@ function onConnect(status)
         }
         $("#mapname").text(talkback.roomname);
         talkback.pubsubSubscribe();
+
+
+        if(navigator.geolocation) {
+            //        $('a#findme').click(function(){           
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var browserLoc = new L.LatLng(position.coords.latitude,position.coords.longitude);
+                map.panTo(browserLoc);
+            });
+            //        });
+        }
+
 
 	//connection.disconnect();
     }
@@ -352,17 +361,6 @@ $(document).ready(function(){
         map.addLayer(new wax.leaf.connector(tilejson));
     });
 
-
-    if(navigator.geolocation) {
-//        $('a#findme').click(function(){           
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var browserLoc = new L.LatLng(position.coords.latitude,position.coords.longitude);
-            map.panTo(browserLoc);
-        });
-//        });
-    }else{
-        $("a#findme").parent("li").hide();
-    }
 
     map.on("click", function(e){
         

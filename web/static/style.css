@@ -13,6 +13,14 @@ div#map{
   left:0px;
 
 }
+div#status{ 
+  position:absolute;
+  top:0px;
+  right:0px;
+  width:200px;
+  z-index:1002;
+  text-align:right;
+}
 div#topnav{ 
   position:absolute;
   top:0px;

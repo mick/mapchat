@@ -25,6 +25,10 @@ var proxy = new httpProxy.HttpProxy({
 });
 app.post('/http-bind', function(req, res){
     console.log("proxying request to ejabberd");
+
+//    res.headers = { 'Pragma': 'no-cache', "Cache-Control": "no-cache" }
+
+
     proxy.proxyRequest(req, res);
 });
 
