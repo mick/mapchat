@@ -10,7 +10,9 @@ app.get('/', function(req, res){
 });
 
 app.get('/room/:room', function(req, res){
-    console.log("joining room"+ req.params.room);
+    res.render('index.ejs', { layout: false});
+});
+app.get('/r/:room', function(req, res){
     res.render('index.ejs', { layout: false});
 });
 
