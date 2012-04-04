@@ -315,7 +315,7 @@ $(document).ready(function(){
         if($(e.target).attr("id") == "modepolyline"){
             maptalk.mode="edit";
             maptalk.edit_type="polyline";           
-            $("a.dropdown-toggle span").text("Mode: Edit - Polyline");
+            $("a.dropdown-toggle span").text("Mode: Edit - Line");
         }else if($(e.target).attr("id") == "modepoint"){
             maptalk.mode="edit";
             maptalk.edit_type="point";           
