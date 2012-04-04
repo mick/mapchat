@@ -1,5 +1,5 @@
 body{ margin:0px; padding:0px; font-family:arial; font-size:14px;}
-div#chatcontent{ position: absolute; top:0px; right:0px; bottom:50px; top:38px;  background:#fff; width:250px;}
+div#chatcontent{ position: absolute; top:0px; right:0px; bottom:110px; top:38px;  background:#fff; width:250px;   overflow:auto;}
 
 div#headerwrapper{ position:absolute; top:0px; left:0px; 
   z-index:10; width:100%;

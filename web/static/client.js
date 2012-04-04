@@ -132,7 +132,11 @@ var talkback = {
         var message = $msg.find("body").text();
         var $messagebox = $("<div class='messagebox'><span class='username'>"+from+":</span>  "+message+"</div>");
         $("#chatcontent").append($messagebox);
+        talkback.roomScroll();
         return true;
+    },
+    roomScroll:function(){
+        $("#chatcontent").scrollTop($("#chatcontent").height());
     },
     roomPresence:function(msg){
         console.log("roster: ", talkback.roster);
@@ -146,6 +150,7 @@ var talkback = {
             var from = $(msg).attr("from").replace(talkback.roomjid+"/","");
             var $messagebox = $("<div class='messagebox joined'>"+from+" joined</div>");
             $("#chatcontent").append($messagebox);
+            talkback.roomScroll();
             talkback.roster[$(msg).attr("from")] = $(msg).attr("from");
         }
         //connection.vcard.get(talkback.vcardHandler, $(msg).attr("from"));
