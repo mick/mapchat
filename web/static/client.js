@@ -353,7 +353,7 @@ $(document).ready(function(){
     map = new L.Map('map', {zoomControl:false})  
 
     // Center the map on Washington, DC, at zoom 15
-    .setView(new L.LatLng(43.059, -73.022), 12);
+    .setView(new L.LatLng(37.774, -122.419), 12);
 
     // Get metadata about the map from MapBox
     wax.tilejson(url, function(tilejson) {
