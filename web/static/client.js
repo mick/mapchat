@@ -132,19 +132,23 @@ var talkback = {
         var message = $msg.find("body").text();
         var $messagebox = $("<div class='messagebox'><span class='username'>"+from+":</span>  "+message+"</div>");
         $("#chatcontent").append($messagebox);
-        console.log(msg);
         return true;
     },
     roomPresence:function(msg){
-        console.log("presence: ",$(msg).attr("from"));
         console.log("roster: ", talkback.roster);
-        if($(msg).attr("from") in talkback.roster){
+        if(talkback.roster[$(msg).attr("from")] !== undefined){
             if($(msg).find("photo").text() == talkback.roster[$(msg).attr("from")]){
                 // we have the image and it is current
                 return true;
             }
+        }else{
+            //announce in chat.
+            var from = $(msg).attr("from").replace(talkback.roomjid+"/","");
+            var $messagebox = $("<div class='messagebox joined'>"+from+" joined</div>");
+            $("#chatcontent").append($messagebox);
+            talkback.roster[$(msg).attr("from")] = $(msg).attr("from");
         }
-        connection.vcard.get(talkback.vcardHandler, $(msg).attr("from"));
+        //connection.vcard.get(talkback.vcardHandler, $(msg).attr("from"));
         return true;
     },
     sendRoomMessage:function(message){

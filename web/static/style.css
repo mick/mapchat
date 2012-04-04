@@ -70,6 +70,14 @@ div#chatcontent div.messagebox{
   min-height:20px;
   margin-bottom:10px;
 }
+div#chatcontent div.messagebox.joined{
+  font-weight:bold;
+  font-size:0.6em;
+  color:#666;
+  min-height:10px;
+  padding:1px 5px;
+  margin-bottom:2px;
+} 
 div#chatcontent span.username{ 
   font-weight:bold;
   font-size:0.8em;
