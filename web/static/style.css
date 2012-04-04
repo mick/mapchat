@@ -1,5 +1,5 @@
 body{ margin:0px; padding:0px; font-family:arial; font-size:14px;}
-div#chatcontent{ position: absolute; top:0px; right:0px; bottom:110px; top:38px;  background:#fff; width:250px;   overflow:auto;}
+div#chatcontent{ position: absolute; top:0px; right:0px; bottom:110px; top:38px;  background:#fff; width:250px;   overflow:auto; z-index:1000;}
 
 div#headerwrapper{ position:absolute; top:0px; left:0px; 
   z-index:10; width:100%;
@@ -20,6 +20,7 @@ div#topnav{
   background-color: rgba(255,255,255,0.9);
   width:100%;
   border-bottom: solid 1px #666;
+  z-index:1000;
 }
 div#topnav ul#tabs{
   border:none;
