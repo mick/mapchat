@@ -29,7 +29,11 @@ cl.on('online',
 cl.on('stanza',
       function(stanza) {
           console.log(stanza.toString());
-          pubsub.handleStanza(stanza);
+          try{
+              pubsub.handleStanza(stanza);
+          }catch(e){
+              console.log("error", e);
+          }
 
       });
 cl.on('error',
