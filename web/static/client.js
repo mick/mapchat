@@ -17,6 +17,10 @@ function rawOutput(data)
     log('SENT: ' + data);
 }
 
+if(console.log === undefined){
+    console.log = function(){};
+}
+
 function onConnect(status)
 {
     if (status == Strophe.Status.CONNECTING) {
