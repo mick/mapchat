@@ -36,6 +36,9 @@ function onConnect(status)
         if(window.location.pathname.substr(0,6) == "/room/"){
             talkback.roomname = window.location.pathname.replace("/room/", "");
             talkback.joinRoom(talkback.roomname+"@chat.talkback.im");            
+        }else if(window.location.pathname.substr(0,6) == "/r/"){
+            talkback.roomname = window.location.pathname.replace("/r/", "");
+            talkback.joinRoom(talkback.roomname+"@chat.talkback.im");            
         }else{
             talkback.roomname = "test";
             talkback.joinRoom("test@chat.talkback.im");
