@@ -347,7 +347,7 @@ $(document).ready(function(){
             $("a.dropdown-toggle span").text("Mode: View");
         }
     });
-
+    $('#map').css("height", $(window).height());
     // Define the map to use from MapBox
     // This is the TileJSON endpoint copied from the embed button on your map
     var url = 'http://a.tiles.mapbox.com/v3/dmt.map-cdkzgmkx.jsonp';

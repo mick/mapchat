@@ -5,12 +5,15 @@ div#headerwrapper{ position:absolute; top:0px; left:0px;
   z-index:10; width:100%;
 }
 
-div#map{ 
-  height:100%;
+div#map-container{ 
   width:100%;
   position:absolute !important;
   top:0px;
   left:0px;
+}
+div#map{ 
+  width:100%;
+  height:100%;
 }
 div#status{ 
   position:absolute;
