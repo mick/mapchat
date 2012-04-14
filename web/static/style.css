@@ -8,10 +8,9 @@ div#headerwrapper{ position:absolute; top:0px; left:0px;
 div#map{ 
   height:100%;
   width:100%;
-  position:absolute;
+  position:absolute !important;
   top:0px;
   left:0px;
-
 }
 div#status{ 
   position:absolute;
