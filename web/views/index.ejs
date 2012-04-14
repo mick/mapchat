@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/static/strophe.pubsub.js"></script>
     <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="/static/bootstrap/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap-modal.js"></script>
     <link rel="stylesheet" href="/static/leaflet.css" />
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="/static/leaflet.ie.css" />
@@ -40,7 +41,8 @@
             </ul>
           </li>
         </ul>
-        </div>
+        <div id="aboutnav"><a data-toggle="modal" href="#about">About</a></div>
+      </div>
 
       <div class="navbar navbar-fixed-bottom">
         <div class="navbar-inner">
@@ -69,24 +71,27 @@
     </div>
 
     <div id="status"></div>
-    
-    <!--<div id="navigation">
-      <div id="square"></div>
-      <div class="spacer"></div>  
-      <div id="room_title" class="title light">This is a room title</div>
-      <div class="divider"></div>
-      <div id="roster"></div>
-      <div id="log"></div>
+
+    <div class="modal fade" id="about">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>About Mapchat</h3>
+      </div>
+      <div class="modal-body">
+        <p>You are currently demoing the latest version of mapchat. If you are looking for the earlier version,
+          from the book Getting Started with GEO, CouchDB and Node.js you can find it at
+          <a target="_blank" href="http://v1.mapchat.im">v1.mapchat.im</a> and the source for it on
+          <a target="_blank" href="https://github.com/dthompson/mapchat_v1">github</a>.
+        </p>
+        <p>The new version of map chat, supports multiple rooms, editing geometries, and of course chat. It is built with
+          <a target="_blank" href="http://xmpp.org">XMPP</a>, <a href="http://nodejs.org" target="_blank">Node.js</a>, and
+          <a href="http://strophe.im/" target="_blank">strophe.js</a>. The source for the new version is on
+          <a target="_blank" href="http://github.com/dthompson/mapchat">github</a>. </p>
+      </div>
+      <div class="modal-footer">
+
+      </div>
     </div>
 
-    <div id="chatmessage">
-      <textarea id="message"></textarea>
-      <input type="button" value="Send" id="sendmessage" />      
-    </div>
-    
-    <div id="wrapper">
-      <div id="content">
-      </div>
-    </div>-->
   </body>
 </html>

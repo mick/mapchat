@@ -1,6 +1,7 @@
 
 
-This is a collaborative map.  It using XMPP is is organized like a chat room. Each room has a Pubsub Node that all changes to features of the map are published to. 
+This is a collaborative map.  It uses XMPP and is organized like a chat room. Each room has a Pubsub node which all users in the chat room subscribe to
+and all users in the chat room publish map changes to.
 
 
 ==== REQUIRES

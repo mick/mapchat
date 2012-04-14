@@ -64,8 +64,11 @@ div#navigation div.divider{
   margin:3px 0px;
   
 }
-body{ 
-
+#aboutnav{ 
+  position:absolute;
+  right:250px;
+  top:10px;
+  font-weight:bold;
 }
 div#wrapper{ 
   padding-left:285px;
