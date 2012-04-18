@@ -16,6 +16,15 @@ app.get('/r/:room', function(req, res){
     res.render('index.ejs', { layout: false});
 });
 
+app.get('/api/geocode', function(req, res){
+    //http://www.mapquestapi.com/geocoding/v1/address?key=YOUR_KEY_HERE&location=Lancaster,PA&callback=renderGeocode
+    request("http://www.mapquestapi.com/geocoding/v1/address?key="+
+            process.env.MAPQUEST_API_KEY+"&location="+
+            encodeURIComponent(req.param("location")), function(err, resp, body){
+                res.header('Content-Type', "application/json");
+                res.send(body);
+    });
+});
 
 var proxy = new httpProxy.HttpProxy({ 
   target: {

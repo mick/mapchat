@@ -295,10 +295,16 @@ var maptalk = {
         
     },
     colors:["red", "blue", "green", "yellow", "brown", "black", "orange", "purple", "pink"],
-    color_index:0
-    
-
-
+    color_index:0,
+    geocodeLocation:function(location){
+        $.ajax("/api/geocode", {data:{location:location}, success:function(data){
+            
+            if(data.results[0].locations.length > 0){                
+                var loc = new L.LatLng(data.results[0].locations[0].latLng.lat, data.results[0].locations[0].latLng.lng);
+                map.panTo(loc);
+            }
+        }}, "json");
+    }   
 };
 
 
@@ -363,7 +369,10 @@ $(document).ready(function(){
         // Add MapBox Streets as a base layer
         map.addLayer(new wax.leaf.connector(tilejson));
     });
-
+    $("#locsearch").submit(function(e){
+        e.preventDefault();
+        maptalk.geocodeLocation($("#locsearch input").val());       
+    });
 
     map.on("click", function(e){
         
