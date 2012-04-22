@@ -267,7 +267,9 @@ var maptalk = {
                                type:"point"}, [e.target._latlng.lat, e.target._latlng.lng], "alter");
 
     },
-
+    polylineEdit:function(e){
+        console.log("polyline edit", e);
+    },
     sendMapChange:function(feature, point, changeType){
 
         var iq = $iq({from:connection.jid, to:connection.pubsub.service, type:'set'})
@@ -388,6 +390,24 @@ $(document).ready(function(){
                 maptalk.features.push(marker);
 
             }else if(maptalk.edit_type == "polyline"){
+
+                // this close by point should factor in  zoom level.
+                var closeBy_E = new L.LatLng(e.latlng.lat, e.latlng.lng+0.02);
+                var closeBy_W = new L.LatLng(e.latlng.lat, e.latlng.lng-0.02);
+                var polyline = new L.Polyline([closeBy_W, closeBy_E], {editable:true, 
+                                                                    color: maptalk.getFeatureColor(), 
+                                                                    featureid:Math.floor(Math.random()*10000).toString()});
+                map.addLayer(polyline);
+                
+                maptalk.sendMapChange({id:polyline.options.featureid, 
+                                       type:"polyline"}, [e.latlng.lat, e.latlng.lng], "addition");
+                polyline.on("edit", maptalk.polylineEdit);
+                maptalk.features.push(polyline);
+
+
+/*
+
+
                 var polyline = null;
                 if(maptalk.editing_feature != null){
                     polyline = maptalk.editing_feature;
@@ -423,7 +443,7 @@ $(document).ready(function(){
                                        type:"polyline"}, [e.latlng.lat, e.latlng.lng], "addition");
 
                 map.addLayer(polyline);
-
+*/
             }
         }
     });
